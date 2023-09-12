@@ -12,6 +12,7 @@ whether it is too high, low or correct answer.
 def guess_number():
     guess = None
     while guess != random_number:
+
         guess = int(input('Enter number between 1-100: '))
 
         if (guess < random_number):
@@ -23,3 +24,13 @@ def guess_number():
         else:
             print('Congrats, You guessed correctly!')
             break
+
+
+def start():
+    name = input('Write your name here: ')
+    print(f'Hello {name}, good luck!')
+    guess_number()
+
+
+print('Add welcome text & rules here')
+start()
