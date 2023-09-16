@@ -10,10 +10,13 @@ random_number = random.randint(min_value, max_value)
 
 
 def guess_number():
+    
     '''
     Guess a number and the if/else statements will calculate
     whether it is too high, low or correct answer.
     '''
+    random_number = random.randint(min_value, max_value)
+
     guesses = 0
     win = False
     continue_playing = True
@@ -96,7 +99,6 @@ def main():
     '''
     Runs all the program functions
     '''
-    random_number = random.randint(min_value, max_value)
     start_game()
     result = guess_number()
     '''
