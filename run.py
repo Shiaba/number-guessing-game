@@ -9,30 +9,34 @@ max_value = 100
 random_number = random.randint(min_value, max_value)
 
 
-'''
-Guess a number and the if/else statements will calculate
-whether it is too high, low or correct answer.
-'''
 def guess_number():
+    '''
+    Guess a number and the if/else statements will calculate
+    whether it is too high, low or correct answer.
+    '''
     guesses = 0
     win = False
     continue_playing = True
 
 
-    while guesses < 10 and win == False and continue_playing == True:
-
+    while guesses < 7 and win == False and continue_playing == True:
+        '''
+        Inside the try, Raises Error if the guess is either not an integer or if it is
+        below or above the min/max value.
+        '''
         try:
             guess = int(input(f'Enter a number between {min_value} & {max_value}: \n'))
 
             if guess < min_value:
-                print('Below 1\n')
+                print(f'Error! You need to write a number above {min_value}\n')
                 continue
             elif guess > max_value:
-                print('Above 100\n')
+                print(f'Error! You need to write a number below {max_value}\n')
                 continue
         except:
             print(f'Error! Write a number between {min_value} & {max_value}.\n')
             continue
+
 
         '''
         If there are no errors and the user has entered a number between the min & max value,
@@ -63,10 +67,11 @@ def guess_number():
     return win
 
 
-'''
-Quits or restarts the game.
-'''
+
 def game_over():
+    '''
+    Quits or restarts the game.
+    '''
     play_again = True
     restart_game = input('Enter any key to play again or n to quit game: ')
     if restart_game == 'n':
@@ -76,13 +81,21 @@ def game_over():
     else:
         return main()
 
+
 def start_game():
-    print('Add welcome text & rules here')
+    print(f"""
+    Welcome! Rules: You get 7 tries to guess a number between {min_value} & {max_value}.
+    If you can guess the correct number within your tries, you win. If you can't, you lose. Good luck!
+    """)
     name = input('Write your name here: \n')
     print(f'Hello {name}, good luck!\n')
 
 
+
 def main():
+    '''
+    Runs all the program functions
+    '''
     random_number = random.randint(min_value, max_value)
     start_game()
     result = guess_number()
