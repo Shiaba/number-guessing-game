@@ -18,8 +18,7 @@ def guess_number():
     continue_playing = True
 
 
-    while guesses < 3 and win == False and continue_playing == True:
-        print(f'Times guessed: {guesses}\n')
+    while guesses < 10 and win == False and continue_playing == True:
 
         try:
             guess = int(input(f'Enter a number between {min_value} & {max_value}: \n'))
@@ -50,6 +49,7 @@ def guess_number():
 
 
         guesses = guesses + 1
+        print(f'Times guessed: {guesses}\n')
         '''
         Quit game option during gameplay 
         '''
@@ -61,6 +61,19 @@ def guess_number():
 
     return win
 
+
+'''
+Quits or restarts the game.
+'''
+def game_over():
+    play_again = True
+    restart_game = input('Enter any key to play again or n to quit game: ')
+    if restart_game == 'n':
+        play_again = False
+        print('Thank you for playing!')
+
+    else:
+        return main()
 
 def start_game():
     print('Add welcome text & rules here')
@@ -75,9 +88,11 @@ def main():
     Get win/loss result
     '''
     if result == True:
-        print('Congratulations, You guessed correctly!\n')
+        print(f'Congratulations, You guessed correctly!\n')
     else:
-        print(f'You lost, the correct number was {random_number}. Better luck next time!')
+        print(f'You lost, the correct number was {random_number}. Better luck next time!\n')
+    
+    game_over()
 
 
 main()
