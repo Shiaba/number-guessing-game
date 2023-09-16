@@ -36,7 +36,6 @@ def guess_number():
         the if/else statement will check if the conditions match.
         '''
         if guess == random_number:
-            print('Congrats, You guessed correctly!\n')
             win = True
             break
 
@@ -61,7 +60,14 @@ def start_game():
 
 def main():
     start_game()
-    guess_number()
+    result = guess_number()
+    '''
+    Get win/loss result
+    '''
+    if result == True:
+        print('Congratulations, You guessed correctly!\n')
+    else:
+        print(f'You lost, the correct number was {random_number}. Better luck next time!')
 
 
 main()
