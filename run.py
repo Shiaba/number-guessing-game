@@ -14,7 +14,8 @@ whether it is too high, low or correct answer.
 '''
 def guess_number():
     guesses = 0
-    while guesses < 3:
+    win = False
+    while guesses < 3 and win == False:
         print(f'Times guessed: {guesses}\n')
 
         try:
@@ -30,17 +31,26 @@ def guess_number():
             print(f'Error! Write a number between {min_value} & {max_value}.\n')
             continue
 
-        if guess < random_number:
-            print('Number is higher than your guess\n')
-
-        elif guess > random_number:
-            print('Number is lower than your guess\n')
-
-        else:
+        '''
+        If there are no errors  and the user has entered a number between the min & max value,
+        the if/else statement will check if the conditions match.
+        '''
+        if guess == random_number:
             print('Congrats, You guessed correctly!\n')
+            win = True
             break
 
+        elif guess < random_number:
+            print('Number is higher than your guess\n')
+
+        else:
+            print('Number is lower than your guess\n')
+
+
         guesses = guesses + 1
+
+
+    return win
 
 
 def start():
@@ -49,5 +59,5 @@ def start():
     guess_number()
 
 
-print('Add welcome text & rules here\n')
+print('Add welcome text & rules here')
 start()
