@@ -13,8 +13,9 @@ Guess a number and the if/else statements will calculate
 whether it is too high, low or correct answer.
 '''
 def guess_number():
-    guess = None
-    while guess != random_number:
+    guesses = 0
+    while guesses < 3:
+        print(f'Times guessed: {guesses}')
 
         guess = int(input('Enter number between 1-100: '))
 
@@ -27,6 +28,8 @@ def guess_number():
         else:
             print('Congrats, You guessed correctly!')
             break
+
+        guesses = guesses + 1
 
 
 def start():
