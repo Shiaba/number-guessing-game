@@ -15,7 +15,10 @@ whether it is too high, low or correct answer.
 def guess_number():
     guesses = 0
     win = False
-    while guesses < 3 and win == False:
+    continue_playing = True
+
+
+    while guesses < 3 and win == False and continue_playing == True:
         print(f'Times guessed: {guesses}\n')
 
         try:
@@ -32,7 +35,7 @@ def guess_number():
             continue
 
         '''
-        If there are no errors  and the user has entered a number between the min & max value,
+        If there are no errors and the user has entered a number between the min & max value,
         the if/else statement will check if the conditions match.
         '''
         if guess == random_number:
@@ -47,6 +50,13 @@ def guess_number():
 
 
         guesses = guesses + 1
+        '''
+        Quit game option during gameplay 
+        '''
+        quit_game = input('Enter any key to continue or n to quit game: ')
+        if quit_game == 'n':
+            continue_playing = False
+            break
 
 
     return win
