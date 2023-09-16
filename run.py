@@ -53,11 +53,15 @@ def guess_number():
     return win
 
 
-def start():
+def start_game():
+    print('Add welcome text & rules here')
     name = input('Write your name here: \n')
     print(f'Hello {name}, good luck!\n')
+
+
+def main():
+    start_game()
     guess_number()
 
 
-print('Add welcome text & rules here')
-start()
+main()
