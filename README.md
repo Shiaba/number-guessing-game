@@ -1,2 +1,3 @@
-Number Guessing Game:
-A game where you have to guess the right number. 
+# Number Guessing Game
+Number Guessing Game is a game project that randomizes a number which the player/user has to guess correctly.
+
