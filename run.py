@@ -10,7 +10,7 @@ random_number = random.randint(min_value, max_value)
 
 
 def guess_number():
-    
+
     '''
     Guess a number and the if/else statements will calculate
     whether it is too high, low or correct answer.
@@ -21,11 +21,10 @@ def guess_number():
     win = False
     continue_playing = True
 
-
-    while guesses < 7 and win == False and continue_playing == True:
+    while guesses < 7 and win is False and continue_playing is True:
         '''
-        Inside the try, Raises Error if the guess is either not an integer or if it is
-        below or above the min/max value.
+        Inside the try, Raises Error if the guess is either not an integer or
+        if it is below or above the min/max value.
         '''
         try:
             guess = int(input(f'Enter a number between {min_value} & {max_value}: \n'))
@@ -36,13 +35,15 @@ def guess_number():
             elif guess > max_value:
                 print(f'Error! You need to write a number below {max_value}\n')
                 continue
-        except:
-            print(f'Error! Write a number between {min_value} & {max_value}.\n')
+        except ValueError:
+            print(f'''
+            Error! Write a number between {min_value} & {max_value}.\n
+            ''')
             continue
 
-
         '''
-        If there are no errors and the user has entered a number between the min & max value,
+        If there are no errors and the user has entered a
+        number between the min & max value,
         the if/else statement will check if the conditions match.
         '''
         if guess == random_number:
@@ -55,20 +56,17 @@ def guess_number():
         else:
             print('Number is lower than your guess\n')
 
-
         guesses = guesses + 1
         print(f'Times guessed: {guesses}\n')
         '''
-        Quit game option during gameplay 
+        Quit game option during gameplay
         '''
-        quit_game = input('Enter any key to continue or n to quit game: ')
+        quit_game = input('Enter any key to continue or n to quit game: \n')
         if quit_game == 'n':
             continue_playing = False
             break
 
-
     return win
-
 
 
 def game_over():
@@ -87,12 +85,13 @@ def game_over():
 
 def start_game():
     print(f"""
-    Welcome! Rules: You get 7 tries to guess a number between {min_value} & {max_value}.
-    If you can guess the correct number within your tries, you win. If you can't, you lose. Good luck!
+    Welcome!
+    You get 7 tries to guess a number between {min_value} & {max_value}.
+    If you can guess the correct number within your tries, you win.
+    If you can't, you lose. Good luck!
     """)
     name = input('Write your name here: \n')
     print(f'Hello {name}, good luck!\n')
-
 
 
 def main():
@@ -104,11 +103,14 @@ def main():
     '''
     Get win/loss result
     '''
-    if result == True:
+    if result is True:
         print(f'Congratulations, You guessed correctly!\n')
     else:
-        print(f'You lost, the correct number was {random_number}. Better luck next time!\n')
-    
+        print(f'''
+        You lost, the correct number was {random_number}.
+        Better luck next time!\n
+        ''')
+
     game_over()
 
 
