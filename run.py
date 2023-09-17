@@ -15,7 +15,6 @@ def guess_number():
     Guess a number and the if/else statements will calculate
     whether it is too high, low or correct answer.
     '''
-    random_number = random.randint(min_value, max_value)
 
     guesses = 0
     win = False
@@ -73,10 +72,8 @@ def game_over():
     '''
     Quits or restarts the game.
     '''
-    play_again = True
     restart_game = input('Enter any key to play again or n to quit game: ')
     if restart_game == 'n':
-        play_again = False
         print('Thank you for playing!')
 
     else:
