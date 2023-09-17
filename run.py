@@ -68,18 +68,6 @@ def guess_number():
     return win
 
 
-def game_over():
-    '''
-    Quits or restarts the game.
-    '''
-    restart_game = input('Enter any key to play again or n to quit game: ')
-    if restart_game == 'n':
-        print('Thank you for playing!')
-
-    else:
-        return main()
-
-
 def start_game():
     print(f"""
     Welcome!
@@ -108,7 +96,7 @@ def main():
         Better luck next time!\n
         ''')
 
-    game_over()
+    print('Thank you for playing!')
 
 
 main()
