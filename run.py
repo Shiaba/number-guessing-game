@@ -26,7 +26,8 @@ def guess_number():
         if it is below or above the min/max value.
         '''
         try:
-            guess = int(input(f'Enter a number between {min_value} & {max_value}: \n'))
+            guess = int(input(
+                f'Enter a number between {min_value} & {max_value}: \n'))
 
             if guess < min_value:
                 print(f'Error! You need to write a number above {min_value}\n')
